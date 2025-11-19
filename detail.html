@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>There and Back Again Booksellers – Book Detail</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">There and Back Again Booksellers</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="catalog.html">Browse Catalog</a>
+      <a href="loans.html">Loans &amp; Holds</a>
+      <a href="account.html">My Account</a>
+      <a href="cart.html">Cart <span class="badge">2</span></a>
+    </nav>
+    <div class="nav-status">
+      Signed in as <strong>jdoe@example.com</strong>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Book Detail</h2>
+      <p>
+        Detailed information about a selected book, with actions to purchase or place a hold.
+      </p>
+
+      <div class="detail-layout">
+        <div id="detail-cover" class="detail-cover"></div>
+        <div class="detail-info">
+          <h3 id="detail-title"></h3>
+          <div class="detail-meta">
+            <p><strong>Author:</strong> <span id="detail-author"></span></p>
+            <p><strong>Genre:</strong> <span id="detail-genre"></span></p>
+            <p><strong>Format:</strong> <span id="detail-format"></span></p>
+            <p><strong>Condition:</strong> <span id="detail-condition"></span></p>
+            <p><strong>Price:</strong> <span id="detail-price"></span></p>
+            <p><strong>Availability:</strong> <span id="detail-availability"></span></p>
+          </div>
+
+          <p id="detail-description"></p>
+
+          <p>
+            <strong>Tags:</strong>
+            <span id="detail-tags"></span>
+          </p>
+
+          <div class="item-actions">
+            <button class="btn btn-primary" type="button"
+                    onclick="location.href='cart.html'">Add to Cart</button>
+            <button class="btn btn-secondary" type="button">Place Hold</button>
+          </div>
+
+          <h4 style="margin-top:1.25rem;">Customer Reviews</h4>
+          <p><em id="detail-rating"></em></p>
+          <p id="detail-review"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 There and Back Again Booksellers · Prototype Web Application · This is a non-functional mockup for SRS documentation.
+  </footer>
+
+  <script>
+    // Simple in-page "daThere and Back Againse" of books
+    const BOOKS = {
+      "two-cities": {
+        title: "A Tale of Two Cities",
+        author: "Charles Dickens",
+        genre: "Historical fiction",
+        format: "Paperback",
+        condition: "New",
+        price: "$14.99",
+        availability: "In Stock (Eligible for Loan)",
+        coverLabel: "A Tale of Two Cities",
+        description:
+          "Set in London and Paris before and during the French Revolution, this classic novel explores themes of sacrifice, justice, and resurrection through the intertwined lives of several characters.",
+        tags: ["Classic", "Historical", "Best-seller"],
+        rating: "Rating: ★★★★☆ (4.5 / 5)",
+        review:
+          "“A powerful story with unforgettable characters. The contrast between the two cities and the themes of sacrifice still resonate today.”"
+      },
+      "little-prince": {
+        title: "The Little Prince",
+        author: "Antoine de Saint-Exupéry",
+        genre: "Fantasy",
+        format: "Paperback",
+        condition: "New",
+        price: "$9.99",
+        availability: "In Stock",
+        coverLabel: "The Little Prince",
+        description:
+          "A poetic tale of a young prince who travels from planet to planet, learning about love, loss, and human nature along the way.",
+        tags: ["Classic", "Fantasy", "Philosophical"],
+        rating: "Rating: ★★★★★ (4.8 / 5)",
+        review:
+          "“Beautiful, simple, and profound. A book that means something different every time you reread it.”"
+      },
+      "alchemist": {
+        title: "The Alchemist",
+        author: "Paulo Coelho",
+        genre: "Fiction / Fantasy",
+        format: "Paperback",
+        condition: "New",
+        price: "$16.99",
+        availability: "In Stock",
+        coverLabel: "The Alchemist",
+        description:
+          "Santiago, an Andalusian shepherd boy, sets out on a journey to find a worldly treasure and discovers the power of following his personal legend.",
+        tags: ["Inspirational", "Adventure", "Best-seller"],
+        rating: "Rating: ★★★★☆ (4.3 / 5)",
+        review:
+          "“A modern classic that inspires readers to pursue their dreams and listen to their hearts.”"
+      },
+      "hp1": {
+        title: "Harry Potter and the Philosopher's Stone",
+        author: "J. K. Rowling",
+        genre: "Fantasy",
+        format: "Hardcover",
+        condition: "New",
+        price: "$24.99",
+        availability: "On Loan – Due 03/15/2025",
+        coverLabel: "Harry Potter and the Philosopher's Stone",
+        description:
+          "The first book in the Harry Potter series introduces the wizarding world as Harry discovers his true heritage and attends Hogwarts School of Witchcraft and Wizardry.",
+        tags: ["Fantasy", "Young Adult", "Best-seller"],
+        rating: "Rating: ★★★★★ (4.7 / 5)",
+        review:
+          "“Magical, charming, and endlessly re-readable. A beloved start to a landmark series.”"
+      },
+      "and-then": {
+        title: "And Then There Were None",
+        author: "Agatha Christie",
+        genre: "Mystery",
+        format: "Paperback",
+        condition: "New",
+        price: "$11.99",
+        availability: "In Stock",
+        coverLabel: "And Then There Were None",
+        description:
+          "Ten strangers are invited to a remote island, where they are accused of past crimes and mysteriously killed one by one.",
+        tags: ["Mystery", "Classic", "Thriller"],
+        rating: "Rating: ★★★★★ (4.6 / 5)",
+        review:
+          "“One of the greatest mystery novels ever written, with a brilliantly executed plot.”"
+      },
+      "red-chamber": {
+        title: "Dream of the Red Chamber",
+        author: "Cao Xueqin",
+        genre: "Family saga",
+        format: "Paperback",
+        condition: "New",
+        price: "$18.99",
+        availability: "In Stock",
+        coverLabel: "Dream of the Red Chamber",
+        description:
+          "A monumental Chinese classic chronicling the rise and fall of a wealthy family, rich in psychological depth and cultural detail.",
+        tags: ["Classic", "Chinese Literature", "Family Saga"],
+        rating: "Rating: ★★★★☆ (4.2 / 5)",
+        review:
+          "“Dense but rewarding, offering a vivid portrait of 18th-century aristocratic life.”"
+      },
+      "hobbit": {
+        title: "The Hobbit",
+        author: "J. R. R. Tolkien",
+        genre: "Fantasy",
+        format: "Paperback",
+        condition: "New",
+        price: "$19.99",
+        availability: "In Stock",
+        coverLabel: "The Hobbit",
+        description:
+          "Bilbo Baggins is swept into an epic quest to reclaim a lost dwarf kingdom from the dragon Smaug.",
+        tags: ["Fantasy", "Adventure", "Classic"],
+        rating: "Rating: ★★★★★ (4.8 / 5)",
+        review:
+          "“A delightful adventure that laid the foundation for modern fantasy.”"
+      },
+      "alice": {
+        title: "Alice's Adventures in Wonderland",
+        author: "Lewis Carroll",
+        genre: "Fantasy",
+        format: "Paperback",
+        condition: "New",
+        price: "$10.99",
+        availability: "On Loan – Due 03/10/2025",
+        coverLabel: "Alice's Adventures in Wonderland",
+        description:
+          "Alice falls down a rabbit hole into a whimsical world filled with curious characters and nonsensical logic.",
+        tags: ["Classic", "Fantasy", "Children's"],
+        rating: "Rating: ★★★★☆ (4.4 / 5)",
+        review:
+          "“A surreal and imaginative journey that remains a cultural touchstone.”"
+      },
+      "she": {
+        title: "She: A History of Adventure",
+        author: "H. Rider Haggard",
+        genre: "Adventure",
+        format: "Paperback",
+        condition: "New",
+        price: "$13.99",
+        availability: "In Stock",
+        coverLabel: "She: A History of Adventure",
+        description:
+          "An adventure novel following an expedition into Africa and an encounter with the mysterious and immortal queen Ayesha.",
+        tags: ["Adventure", "Classic", "Exploration"],
+        rating: "Rating: ★★★★☆ (4.0 / 5)",
+        review:
+          "“A strange and atmospheric adventure story that influenced many later works.”"
+      },
+      "davinci": {
+        title: "The Da Vinci Code",
+        author: "Dan Brown",
+        genre: "Mystery / Thriller",
+        format: "Paperback",
+        condition: "New",
+        price: "$17.99",
+        availability: "In Stock",
+        coverLabel: "The Da Vinci Code",
+        description:
+          "A fast-paced thriller that weaves together art, history, and religious symbolism as Robert Langdon races to solve a deadly mystery.",
+        tags: ["Thriller", "Mystery", "Best-seller"],
+        rating: "Rating: ★★★★☆ (4.1 / 5)",
+        review:
+          "“Gripping and controversial, it keeps readers turning pages late into the night.”"
+      }
+    };
+
+    function populateDetailPage() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("book") || "two-cities";
+      const book = BOOKS[id] || BOOKS["two-cities"];
+
+      document.getElementById("detail-cover").textContent = book.coverLabel;
+      document.getElementById("detail-title").textContent = book.title;
+      document.getElementById("detail-author").textContent = book.author;
+      document.getElementById("detail-genre").textContent = book.genre;
+      document.getElementById("detail-format").textContent = book.format;
+      document.getElementById("detail-condition").textContent = book.condition;
+      document.getElementById("detail-price").textContent = book.price;
+      document.getElementById("detail-availability").textContent = book.availability;
+      document.getElementById("detail-description").textContent = book.description;
+      document.getElementById("detail-rating").textContent = book.rating;
+      document.getElementById("detail-review").textContent = book.review;
+
+      const tagsContainer = document.getElementById("detail-tags");
+      tagsContainer.innerHTML = "";
+      book.tags.forEach(tag => {
+        const span = document.createElement("span");
+        span.className = "tag";
+        span.textContent = tag;
+        tagsContainer.appendChild(span);
+      });
+    }
+
+    populateDetailPage();
+  </script>
+</body>
+</html>

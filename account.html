@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>There and Back Again Booksellers – My Account</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">There and Back Again Booksellers</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="catalog.html">Browse Catalog</a>
+      <a href="loans.html">Loans &amp; Holds</a>
+      <a href="account.html">My Account</a>
+      <a href="cart.html">Cart <span class="badge">2</span></a>
+    </nav>
+    <div class="nav-status">
+      Signed in as <strong>jdoe@example.com</strong>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>My Account</h2>
+      <p>
+        Manage your profile information, review your order history, and track your wishlisted books.
+      </p>
+
+      <h3>Profile</h3>
+      <p><strong>Name:</strong> Jane Doe</p>
+      <p><strong>Email:</strong> jdoe@example.com</p>
+      <p><strong>Membership:</strong> Loyalty Member – Active (Renews: 12/31/2025)</p>
+
+      <h3 style="margin-top:1rem;">Order History</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Order #</th>
+            <th>Date</th>
+            <th>Books</th>
+            <th>Total</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>100234</td>
+            <td>02/20/2025</td>
+            <td>“The Alchemist”, “The Da Vinci Code”</td>
+            <td>$34.98</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td>100235</td>
+            <td>03/05/2025</td>
+            <td>“A Tale of Two Cities”</td>
+            <td>$14.99</td>
+            <td>Processing</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:1.5rem;">Wishlist</h3>
+      <p>
+        Books you've saved for later. You can move these to your cart when you’re ready to purchase.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Book</th>
+            <th>Author</th>
+            <th>Availability</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>The Hobbit</td>
+            <td>J. R. R. Tolkien</td>
+            <td>In Stock</td>
+            <td>$19.99</td>
+            <td>
+              <button class="btn btn-primary" type="button"
+                      onclick="location.href='cart.html'">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>The Little Prince</td>
+            <td>Antoine de Saint-Exupéry</td>
+            <td>In Stock</td>
+            <td>$9.99</td>
+            <td>
+              <button class="btn btn-primary" type="button"
+                      onclick="location.href='cart.html'">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Harry Potter and the Philosopher's Stone</td>
+            <td>J. K. Rowling</td>
+            <td>On Loan – Place Hold</td>
+            <td>$24.99</td>
+            <td>
+              <button class="btn btn-secondary" type="button"
+                      onclick="location.href='detail.html?book=hp1'">
+                View Details
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 There and Back Again Booksellers · Prototype Web Application · This is a non-functional mockup for SRS documentation.
+  </footer>
+</body>
+</html>

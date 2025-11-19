@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>There and Back Again Booksellers – Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">There and Back Again Booksellers</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="catalog.html">Browse Catalog</a>
+      <a href="loans.html">Loans &amp; Holds</a>
+      <a href="account.html">My Account</a>
+      <a href="cart.html">Cart <span class="badge">2</span></a>
+    </nav>
+    <div class="nav-status">
+      Signed in as <strong>jdoe@example.com</strong>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Checkout</h2>
+      <p>
+        Review your information and complete your purchase. This is a mock checkout form for the prototype only.
+      </p>
+
+      <!-- Step indicator (fake, just for UI) -->
+      <p style="margin-bottom:1rem;">
+        <strong>Step 1:</strong> Cart &nbsp;→&nbsp;
+        <strong>Step 2:</strong> Checkout &nbsp;→&nbsp;
+        <span style="opacity:0.6;">Step 3: Confirmation</span>
+      </p>
+
+      <!-- Shipping / Contact Info -->
+      <h3>Shipping &amp; Contact Information</h3>
+      <form>
+        <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+          <div style="flex:1 1 220px;">
+            <label>
+              Full Name<br />
+              <input type="text" placeholder="Jane Doe" style="width:100%; padding:0.4rem; margin-top:0.2rem; border-radius:4px; border:1px solid #ccc;" />
+            </label>
+          </div>
+          <div style="flex:1 1 220px;">
+            <label>
+              Email<br />
+              <input type="email" placeholder="jdoe@example.com" style="width:100%; padding:0.4rem; margin-top:0.2rem; border-radius:4px; border:1px solid #ccc;" />
+            </label>
+          </div>
+        </div>
+
+        <div style="margin-top:0.75rem;">
+          <label>
+            Street Address<br />
+            <input type="text" placeholder="123 Main St" style="width:100%; padding:0.4rem; margin-top:0.2rem; border-radius:4px; border:1px solid #ccc;" />
+          </label>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-top:0.75rem;">
+          <div style="flex:1 1 160px;">
+            <label>
+              City<br />
+              <input type="text" placeholder="Melbourne" style="width:100%; padding:0.4rem; margin-top:0.2rem; border-radius:4px; border:1px solid #ccc;" />
+            </label>
+          </div>
+          <div style="flex:1 1 100px;">
+            <label>
+              State<br />
+              <input type="text" placeholder="FL" style="width:100%; padding:0.4rem; margin-top:0.2rem; border-radius:4px; border:1px solid #ccc;" />
+            </label>
+          </div>
+          <div style="flex:1 1 120px;">
+            <label>
+              ZIP Code<br />
+              <input type="text" placeholder="32901" style="width:100%; padding:0.4rem; margin-top:0.2rem; border-radius:4px; border:1px solid #ccc;" />
+            </label>
+          </div>
+        </div>
+
+        <!-- Payment Info -->
+        <h3 style="margin-top:1.5rem;">Payment Information</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+          <div style="flex:1 1 260px;">
+            <label>
+              Card Number<br />
+              <input type="text" placeholder="1234 5678 9012 3456" style="width:100%; padding:0.4rem; margin-top:0.2rem; border-radius:4px; border:1px solid #ccc;" />
+            </label>
+          </div>
+          <div style="flex:1 1 100px;">
+            <label>
+              Expiration<br />
+              <input type="text" placeholder="MM/YY" style="width:100%; padding:0.4rem; margin-top:0.2rem; border-radius:4px; border:1px solid #ccc;" />
+            </label>
+          </div>
+          <div style="flex:1 1 80px;">
+            <label>
+              CVV<br />
+              <input type="text" placeholder="123" style="width:100%; padding:0.4rem; margin-top:0.2rem; border-radius:4px; border:1px solid #ccc;" />
+            </label>
+          </div>
+        </div>
+
+        <!-- Order Summary (same numbers as cart) -->
+        <h3 style="margin-top:1.5rem;">Order Summary</h3>
+        <div class="cart-list">
+          <div class="cart-item">
+            <div>
+              A Tale of Two Cities<br />
+              <small>Qty: 1 | Paperback</small>
+            </div>
+            <div>$14.99</div>
+          </div>
+          <div class="cart-item">
+            <div>
+              The Da Vinci Code<br />
+              <small>Qty: 1 | Paperback</small>
+            </div>
+            <div>$17.99</div>
+          </div>
+        </div>
+
+        <div class="cart-summary">
+          <p>Subtotal: <strong>$32.98</strong></p>
+          <p>Estimated Tax: <strong>$1.65</strong></p>
+          <p><strong>Total: $34.63</strong></p>
+        </div>
+
+        <!-- Actions -->
+        <div style="margin-top:1rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.75rem;">
+          <button type="button" class="btn btn-secondary"
+                  onclick="location.href='cart.html'">
+            &larr; Back to Cart
+          </button>
+          <button type="button" class="btn btn-primary">
+            Place Order
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 There and Back Again Booksellers · Prototype Web Application · This is a non-functional mockup for SRS documentation.
+  </footer>
+</body>
+</html>

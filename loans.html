@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>There and Back Again Booksellers – Loans & Holds</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">There and Back Again Booksellers</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="catalog.html">Browse Catalog</a>
+      <a href="loans.html">Loans &amp; Holds</a>
+      <a href="account.html">My Account</a>
+      <a href="cart.html">Cart <span class="badge">2</span></a>
+    </nav>
+    <div class="nav-status">
+      Signed in as <strong>jdoe@example.com</strong>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Loans &amp; Holds</h2>
+      <p>
+        View active book loans, due dates, and any holds you have placed.
+      </p>
+
+      <h3>Active Loans</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Book</th>
+            <th>Checked Out On</th>
+            <th>Due Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>The Hobbit</td>
+            <td>03/01/2025</td>
+            <td>03/15/2025</td>
+            <td>On Time</td>
+          </tr>
+          <tr>
+            <td>The Little Prince</td>
+            <td>02/28/2025</td>
+            <td>03/07/2025</td>
+            <td><strong style="color:#c0392b;">Overdue</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:1rem;">Holds</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Book</th>
+            <th>Position</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Harry Potter and the Philosopher's Stone</td>
+            <td>#2</td>
+            <td>Waiting – Estimated Available 03/20/2025</td>
+            <td><button class="btn btn-secondary" type="button">Cancel Hold</button></td>
+          </tr>
+          <tr>
+            <td>Alice's Adventures in Wonderland</td>
+            <td>#1</td>
+            <td>Ready for Pickup</td>
+            <td><button class="btn btn-primary" type="button">Confirm Pickup</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 There and Back Again Booksellers · Prototype Web Application · This is a non-functional mockup for SRS documentation.
+  </footer>
+</body>
+</html>

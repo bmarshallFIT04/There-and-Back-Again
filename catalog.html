@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>There and Back Again Booksellers – Catalog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">There and Back Again Booksellers</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="catalog.html">Browse Catalog</a>
+      <a href="loans.html">Loans &amp; Holds</a>
+      <a href="account.html">My Account</a>
+      <a href="cart.html">Cart <span class="badge">2</span></a>
+    </nav>
+    <div class="nav-status">
+      Signed in as <strong>jdoe@example.com</strong>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Browse &amp; Search Catalog</h2>
+      <p>
+        Explore a selection of all-time best-selling books. Search by keyword and apply filters.
+      </p>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Search by title, author, keyword..." />
+        <select>
+          <option>All Categories</option>
+          <option>Historical Fiction</option>
+          <option>Fantasy</option>
+          <option>Mystery &amp; Thriller</option>
+          <option>Classics</option>
+        </select>
+        <button class="btn btn-primary" type="button">Search</button>
+      </div>
+
+      <div class="filter-row">
+        <div>
+          <strong>Availability:</strong>
+          <label><input type="checkbox" /> In Stock</label>
+          <label><input type="checkbox" /> On Loan</label>
+        </div>
+        <div>
+          <strong>Format:</strong>
+          <label><input type="radio" name="format" /> Any</label>
+          <label><input type="radio" name="format" /> Hardcover</label>
+          <label><input type="radio" name="format" /> Paperback</label>
+        </div>
+        <div>
+          <strong>Sort by:</strong>
+          <select>
+            <option>Relevance</option>
+            <option>Title (A-Z)</option>
+            <option>Author (A-Z)</option>
+            <option>Price (Low → High)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="catalog-grid">
+
+        <!-- 1. A Tale of Two Cities -->
+        <article class="item-card">
+          <div class="item-cover" style="cursor:pointer"
+               onclick="location.href='detail.html?book=two-cities'">
+            A Tale of Two Cities
+          </div>
+          <div class="item-meta">
+            <div class="item-title">A Tale of Two Cities</div>
+            <div>Author: Charles Dickens</div>
+            <div>Genre: Historical fiction</div>
+            <div>Availability: In Stock</div>
+          </div>
+          <div class="item-actions">
+            <span class="item-price">$14.99</span>
+            <button class="btn btn-primary" onclick="location.href='cart.html'">Add to Cart</button>
+            <button class="btn btn-secondary" onclick="location.href='detail.html?book=two-cities'">View Details</button>
+          </div>
+        </article>
+
+        <!-- 2. The Little Prince -->
+        <article class="item-card">
+          <div class="item-cover" style="cursor:pointer"
+               onclick="location.href='detail.html?book=little-prince'">
+            The Little Prince
+          </div>
+          <div class="item-meta">
+            <div class="item-title">The Little Prince</div>
+            <div>Author: Antoine de Saint-Exupéry</div>
+            <div>Genre: Fantasy</div>
+            <div>Availability: In Stock</div>
+          </div>
+          <div class="item-actions">
+            <span class="item-price">$9.99</span>
+            <button class="btn btn-primary" onclick="location.href='cart.html'">Add to Cart</button>
+            <button class="btn btn-secondary" onclick="location.href='detail.html?book=little-prince'">View Details</button>
+          </div>
+        </article>
+
+        <!-- 3. The Alchemist -->
+        <article class="item-card">
+          <div class="item-cover" style="cursor:pointer"
+               onclick="location.href='detail.html?book=alchemist'">
+            The Alchemist
+          </div>
+          <div class="item-meta">
+            <div class="item-title">The Alchemist</div>
+            <div>Author: Paulo Coelho</div>
+            <div>Genre: Fiction / Fantasy</div>
+            <div>Availability: In Stock</div>
+          </div>
+          <div class="item-actions">
+            <span class="item-price">$16.99</span>
+            <button class="btn btn-primary" onclick="location.href='cart.html'">Add to Cart</button>
+            <button class="btn btn-secondary" onclick="location.href='detail.html?book=alchemist'">View Details</button>
+          </div>
+        </article>
+
+        <!-- 4. Harry Potter and the Philosopher's Stone -->
+        <article class="item-card">
+          <div class="item-cover" style="cursor:pointer"
+               onclick="location.href='detail.html?book=hp1'">
+            Harry Potter and the Philosopher's Stone
+          </div>
+          <div class="item-meta">
+            <div class="item-title">Harry Potter and the Philosopher's Stone</div>
+            <div>Author: J. K. Rowling</div>
+            <div>Genre: Fantasy</div>
+            <div>Availability: On Loan – Due 03/15/2025</div>
+          </div>
+          <div class="item-actions">
+            <span class="item-price">$24.99</span>
+            <button class="btn btn-secondary" onclick="location.href='detail.html?book=hp1'">View Details</button>
+          </div>
+        </article>
+
+        <!-- 5. And Then There Were None -->
+        <article class="item-card">
+          <div class="item-cover" style="cursor:pointer"
+               onclick="location.href='detail.html?book=and-then'">
+            And Then There Were None
+          </div>
+          <div class="item-meta">
+            <div class="item-title">And Then There Were None</div>
+            <div>Author: Agatha Christie</div>
+            <div>Genre: Mystery</div>
+            <div>Availability: In Stock</div>
+          </div>
+          <div class="item-actions">
+            <span class="item-price">$11.99</span>
+            <button class="btn btn-primary" onclick="location.href='cart.html'">Add to Cart</button>
+            <button class="btn btn-secondary" onclick="location.href='detail.html?book=and-then'">View Details</button>
+          </div>
+        </article>
+
+        <!-- 6. Dream of the Red Chamber -->
+        <article class="item-card">
+          <div class="item-cover" style="cursor:pointer"
+               onclick="location.href='detail.html?book=red-chamber'">
+            Dream of the Red Chamber
+          </div>
+          <div class="item-meta">
+            <div class="item-title">Dream of the Red Chamber</div>
+            <div>Author: Cao Xueqin</div>
+            <div>Genre: Family saga</div>
+            <div>Availability: In Stock</div>
+          </div>
+          <div class="item-actions">
+            <span class="item-price">$18.99</span>
+            <button class="btn btn-primary" onclick="location.href='cart.html'">Add to Cart</button>
+            <button class="btn btn-secondary" onclick="location.href='detail.html?book=red-chamber'">View Details</button>
+          </div>
+        </article>
+
+        <!-- 7. The Hobbit -->
+        <article class="item-card">
+          <div class="item-cover" style="cursor:pointer"
+               onclick="location.href='detail.html?book=hobbit'">
+            The Hobbit
+          </div>
+          <div class="item-meta">
+            <div class="item-title">The Hobbit</div>
+            <div>Author: J. R. R. Tolkien</div>
+            <div>Genre: Fantasy</div>
+            <div>Availability: In Stock</div>
+          </div>
+          <div class="item-actions">
+            <span class="item-price">$19.99</span>
+            <button class="btn btn-primary" onclick="location.href='cart.html'">Add to Cart</button>
+            <button class="btn btn-secondary" onclick="location.href='detail.html?book=hobbit'">View Details</button>
+          </div>
+        </article>
+
+        <!-- 8. Alice's Adventures in Wonderland -->
+        <article class="item-card">
+          <div class="item-cover" style="cursor:pointer"
+               onclick="location.href='detail.html?book=alice'">
+            Alice's Adventures in Wonderland
+          </div>
+          <div class="item-meta">
+            <div class="item-title">Alice's Adventures in Wonderland</div>
+            <div>Author: Lewis Carroll</div>
+            <div>Genre: Fantasy</div>
+            <div>Availability: On Loan – Due 03/10/2025</div>
+          </div>
+          <div class="item-actions">
+            <span class="item-price">$10.99</span>
+            <button class="btn btn-secondary" onclick="location.href='detail.html?book=alice'">View Details</button>
+          </div>
+        </article>
+
+        <!-- 9. She: A History of Adventure -->
+        <article class="item-card">
+          <div class="item-cover" style="cursor:pointer"
+               onclick="location.href='detail.html?book=she'">
+            She: A History of Adventure
+          </div>
+          <div class="item-meta">
+            <div class="item-title">She: A History of Adventure</div>
+            <div>Author: H. Rider Haggard</div>
+            <div>Genre: Adventure</div>
+            <div>Availability: In Stock</div>
+          </div>
+          <div class="item-actions">
+            <span class="item-price">$13.99</span>
+            <button class="btn btn-primary" onclick="location.href='cart.html'">Add to Cart</button>
+            <button class="btn btn-secondary" onclick="location.href='detail.html?book=she'">View Details</button>
+          </div>
+        </article>
+
+        <!-- 10. The Da Vinci Code -->
+        <article class="item-card">
+          <div class="item-cover" style="cursor:pointer"
+               onclick="location.href='detail.html?book=davinci'">
+            The Da Vinci Code
+          </div>
+          <div class="item-meta">
+            <div class="item-title">The Da Vinci Code</div>
+            <div>Author: Dan Brown</div>
+            <div>Genre: Mystery / Thriller</div>
+            <div>Availability: In Stock</div>
+          </div>
+          <div class="item-actions">
+            <span class="item-price">$17.99</span>
+            <button class="btn btn-primary" onclick="location.href='cart.html'">Add to Cart</button>
+            <button class="btn btn-secondary" onclick="location.href='detail.html?book=davinci'">View Details</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 There and Back Again Booksellers · Prototype Web Application · This is a non-functional mockup for SRS documentation.
+  </footer>
+</body>
+</html>
